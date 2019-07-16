@@ -71,6 +71,14 @@ class TaskCard extends PolymerElement {
         .green {
           background: #21cf5b
         }
+
+        .red {
+          background: red;
+        }
+
+        .yellow {
+          background: yellow;
+        }
         
         .blue {
           background: hsl(239, 82%, 44%)
@@ -108,11 +116,11 @@ class TaskCard extends PolymerElement {
               </paper-listbox>
             </paper-dropdown-menu>
             <paper-dropdown-menu on-iron-select="changeColor" label="Color" value="[[color]]">
-            <paper-listbox slot="dropdown-content" class="dropdown-content">
-            <paper-item>blue</paper-item>
-            <paper-item>orange</paper-item>
-            <paper-item>turquoise</paper-item>
-            <paper-item>green</paper-item>
+              <paper-listbox slot="dropdown-content" class="dropdown-content">
+                <paper-item>blue</paper-item>
+                <paper-item>orange</paper-item>
+                <paper-item>turquoise</paper-item>
+                <paper-item>green</paper-item>
           </paper-listbox>
         </paper-dropdown-menu>
         </section>
