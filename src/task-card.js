@@ -117,6 +117,8 @@ class TaskCard extends PolymerElement {
             </paper-dropdown-menu>
             <paper-dropdown-menu on-iron-select="changeColor" label="Color" value="[[color]]">
               <paper-listbox slot="dropdown-content" class="dropdown-content">
+                <paper-item>yellow</paper-item>
+                <paper-item>red</paper-item>  
                 <paper-item>blue</paper-item>
                 <paper-item>orange</paper-item>
                 <paper-item>turquoise</paper-item>
