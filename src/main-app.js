@@ -246,8 +246,11 @@ class MainApp extends PolymerElement {
 
   getAll() {
     this.id = "";
-    this.$.dataAjax.method = "GET";
-    this.$.dataAjax.generateRequest();
+    if(this.$.dataAjax.method === "GET") {
+      this.$.dataAjax.generateRequest();
+    } else {
+      this.$.dataAjax.method = "GET";
+    }
   }
 
   handleResponse(event, res) {
