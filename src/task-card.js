@@ -83,7 +83,21 @@ class TaskCard extends PolymerElement {
         .blue {
           background: hsl(239, 82%, 44%)
         }
-
+        
+        .btn {
+          cursor: pointer;
+          position: absolute;
+          top: 10vh;
+          left: 2vw;
+          height: 3vh;
+          width: 10vw;
+          text-align: center;
+          background: whitesmoke;
+          color: #24294a;
+          font-size: 1em;
+          border-radius: 15px;
+        }
+       
         @media only screen and (max-width: 680px) {
           h2 {
            font-size: 1em;
