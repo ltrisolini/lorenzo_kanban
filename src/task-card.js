@@ -85,17 +85,26 @@ class TaskCard extends PolymerElement {
         }
         
         .btn {
+          font-Family: 'Lato', Sans-Serif;
           cursor: pointer;
           position: absolute;
           top: 10vh;
-          left: 2vw;
+          right: 2vw;
           height: 3vh;
-          width: 10vw;
+          width: 8vw;
           text-align: center;
           background: whitesmoke;
           color: #24294a;
           font-size: 1em;
           border-radius: 15px;
+        }
+        
+        .btn:hover, .btn:focus {
+          background:  rgb(218, 214, 214);
+        }
+        
+        .btn:active {
+          box-shadow: 0 1px 2px rgba(0,0,0, 0.5) inset;
         }
        
         @media only screen and (max-width: 680px) {
@@ -166,13 +175,12 @@ class TaskCard extends PolymerElement {
   }
 
   deleteTask(event) {
-    const temp = event.target.selectedItem.innerText;
+   
     const id = this.id;
     const detail = {
       id: this.id,
-      id: temp
     }
-    const newEvent = new CustomEvent('task delete', { detail: detail,  bubbles: true, composed: true });
+    const newEvent = new CustomEvent('delete task', { detail: detail,  bubbles: true, composed: true });
     this.dispatchEvent(newEvent);
 
 
