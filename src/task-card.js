@@ -125,7 +125,7 @@ class TaskCard extends PolymerElement {
                 <paper-item>green</paper-item>
           </paper-listbox>
         </paper-dropdown-menu>
-        <button on-click="deleteTask">Delete</button>
+        <paper-button class="red" on-click="deleteTask">Delete</paper-button>
         </section>
       </div>
     `;
