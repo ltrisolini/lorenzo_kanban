@@ -198,8 +198,8 @@ class MainApp extends PolymerElement {
               <div class="empty-bar"></div>
               <div class="fill-bar"></div>
               <div class="stats">
-                  <p><span class="highlight">25%</span> complete</p>
-                  <p>1 of 4 tasks complete</p>
+                  <p><span class="highlight">{{percentageComplete}}</span> complete</p>
+                  <p>{{completedTasks}} of {{totalTasks}} tasks complete</p>
               </div>
               <button class='btn' on-click="openModal">New Task</button>
           </div>
@@ -249,6 +249,29 @@ class MainApp extends PolymerElement {
     this.set('body', { status__c: event.detail.status__c });
     this.id = event.detail.id;
     this.$.dataAjax.method = "PUT";
+  }
+  calculatePercentage(){
+    let totalTasks = this.tasks.length;
+    console.log("Test ",totalTasks);
+    let completedTasks = 0;
+    console.log(this.tasks);
+    var i;
+    for (i = 0; i < this.tasks.length; i++) { 
+      if(this.tasks[i].status__c === 'Complete'){
+        completedTasks = completedTasks + 1;
+      }
+      
+    }
+    console.log("__________", completedTasks);
+
+    let percentageComplete = Math.round((completedTasks/totalTasks) * 100);
+    console.log("________",percentageComplete);
+
+
+    this.set('percentageComplete', percentageComplete);
+    this.set('completedTasks', completedTasks);
+    this.set('totalTasks', totalTasks);
+    this.updateStyles({'--percent': `${percentageComplete/5}vw`});
   }
 
   colorChange(event) {
