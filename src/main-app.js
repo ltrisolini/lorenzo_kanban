@@ -72,12 +72,13 @@ class MainApp extends PolymerElement {
           font-size: 1.4em;
           font-weight: bold;
           margin-right: 1vw;
+          padding-bottom: 15px;
         }
 
         .btn {
           cursor: pointer;
           position: absolute;
-          top: 10vh;
+          top: 13vh;
           left: 2vw;
           height: 3vh;
           width: 10vw;
@@ -198,8 +199,7 @@ class MainApp extends PolymerElement {
               <div class="empty-bar"></div>
               <div class="fill-bar"></div>
               <div class="stats">
-                  <p><span class="highlight">{{percentageComplete}}</span> complete</p>
-                  <p>{{completedTasks}} of {{totalTasks}} tasks complete</p>
+                  <p><span class="highlight">{{percentageComplete}}%</span> complete <br> {{completedTasks}} of {{totalTasks}} tasks complete</p>  
               </div>
               <button class='btn' on-click="openModal">New Task</button>
           </div>
@@ -298,6 +298,7 @@ class MainApp extends PolymerElement {
   handleResponse(event, res) {
     if ( this.$.dataAjax.method === "GET") {
       this.set('tasks', res.response);
+      this.calculatePercentage(); 
     } else {
       this.getAll();
     }
