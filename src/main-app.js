@@ -57,7 +57,7 @@ class MainApp extends PolymerElement {
         }
 
         .fill-bar {
-          width: 5vw;
+          width: var(--percent);
           height: 3vh;
           background: linear-gradient(to right, #4787fb, #67dffd);
           border-radius: 15px;
@@ -198,9 +198,7 @@ class MainApp extends PolymerElement {
 
       <header>
 
-          <svg width='10vw' height='10vh'>
-              <image href='./images/kanban.svg' width='10vw' height='10vh' />
-          </svg>
+         
 
           <div class="progress-bar">
               <div class="empty-bar"></div>
