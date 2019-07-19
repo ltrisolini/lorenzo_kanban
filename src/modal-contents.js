@@ -5,11 +5,33 @@ import '@polymer/paper-input/paper-textarea.js';
 class ModalContents extends PolymerElement {
   static get template() {
     return html`
+    <style>
+    .btn {
+      cursor: pointer;
+      height: 3vh;
+      width: 10vw;
+      text-align: center;
+      background: whitesmoke;
+      color: #24294a;
+      font-size: 1em;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+
+    .btn:hover, .btn:focus {
+      background:  rgb(218, 214, 214);
+    }
+
+    .btn:active {
+      box-shadow: 0 1px 2px rgba(0,0,0, 0.5) inset;
+    }
+
+    </style>
       <paper-input label="User" value="{{user::input}}"></paper-input>
       <paper-input label="Task Name" value="{{title::input}}" value="{{user::input}}"></paper-input>
       <paper-input label="Due Date" value="{{date::input}}"></paper-input>
       <paper-textarea label="Task Description" value="{{description::input}}"></paper-textarea>
-      <button on-click="newTask">Submit</button>
+      <button class="btn" on-click="newTask">Submit</button>
     `;
   }
 

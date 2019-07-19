@@ -11,12 +11,17 @@ class MainApp extends PolymerElement {
         * {
           box-sizing: border-box;
         }
-
+         
         body {
           margin: 10px;
           font-Family: 'Lato', Sans-Serif;
           font-Size: 16px;
           line-height: 1.6;
+        }
+
+        p {
+        margin-top:10px;
+        margin-bottom:10px;
         }
 
         header {
@@ -69,16 +74,16 @@ class MainApp extends PolymerElement {
 
         .progress-bar .highlight {
           color: white;
-          font-size: 1.4em;
+          font-size: 1.1em;
           font-weight: bold;
-          margin-right: 1vw;
-          padding-bottom: 15px;
+          margin-right: 0.5vw;
+          
         }
 
         .btn {
           cursor: pointer;
           position: absolute;
-          top: 13vh;
+          top: 7vh;
           left: 2vw;
           height: 3vh;
           width: 10vw;
@@ -127,7 +132,7 @@ class MainApp extends PolymerElement {
           background: #fff;
           border-radius: 5px;
           padding: 1em 2em;
-          height: 50%;
+          height: 35%;
         }
 
         .modal__close {
@@ -164,6 +169,8 @@ class MainApp extends PolymerElement {
 
         @media screen and (max-width: 768px) {
             
+         
+
           .modal__inner {
             width: 90%;
             height: 90%;
@@ -199,7 +206,7 @@ class MainApp extends PolymerElement {
               <div class="empty-bar"></div>
               <div class="fill-bar"></div>
               <div class="stats">
-                  <p><span class="highlight">{{percentageComplete}}%</span> complete <br> {{completedTasks}} of {{totalTasks}} tasks complete</p>  
+                  <p><span class="highlight">{{percentageComplete}}% complete</span> {{completedTasks}} of {{totalTasks}} tasks complete</p>  
               </div>
               <button class='btn' on-click="openModal">New Task</button>
           </div>
